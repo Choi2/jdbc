@@ -43,7 +43,7 @@ public class MemberDao {
 		try {
 			conn = getConnection();
 			// 3. SQL 준비
-			String sql = "insert into member values(null, ?, ?, ?, ?)";
+			String sql = "insert into member values(null, ?, ?, ?, password(?))";
 			pstmt = conn.prepareStatement(sql); // 준비된 것이지 이 상태에서 커리날리면 오류 걸림
 
 			// 4. 데이터 바인딩(binding)

@@ -6,23 +6,25 @@ import com.cafe24.bookmall.member.vo.MemberVo;
 public class MemberDaoTest {
 
 	public static void main(String[] args) {
-		insertTest();
+		// insertTest();
 		getList();
 	}
-	
+
 	public static void insertTest() {
 		MemberDao dao = new MemberDao();
 		MemberVo vo = new MemberVo();
-		vo.setName("마가렌");
-		vo.setPhone("111-456-790");
-		vo.setEmail("csj111@naver.com");
-		vo.setPassword("12345");
+		vo.setName("티모");
+		vo.setPhone("421-456-790");
+		vo.setEmail("noob@naver.com");
+		vo.setPassword("12012");
 		dao.insert(vo);
 	}
-	
+
 	public static void getList() {
 		MemberDao dao = new MemberDao();
-		System.out.println(dao.getList());
+		for (MemberVo member : dao.getList()) {
+			System.out.println(member);
+		}
 	}
 
 }

@@ -37,7 +37,7 @@ public class OrderBookDao {
 	public boolean insert(OrderBookVo vo) {
 		boolean result = false;
 		Connection conn = null;
-		BookDao bookDao = new BookDao();
+		
 		PreparedStatement pstmt = null;
 
 		try {
@@ -45,7 +45,7 @@ public class OrderBookDao {
 			// 3. SQL 준비
 			String sql = "insert into order_book values(?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql); // 준비된 것이지 이 상태에서 커리날리면 오류 걸림
-
+			BookDao bookDao = new BookDao();
 			// 4. 데이터 바인딩(binding)
 			
 			pstmt.setInt(1, vo.getOrderNo());

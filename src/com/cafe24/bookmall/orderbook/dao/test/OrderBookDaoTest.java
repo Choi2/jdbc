@@ -6,22 +6,24 @@ import com.cafe24.bookmall.orderbook.vo.OrderBookVo;
 public class OrderBookDaoTest {
 
 	public static void main(String[] args) {
-		insertTest();
+	//	insertTest();
 		getList();
 	}
 	
 	public static void insertTest() {
 		OrderBookDao dao = new OrderBookDao();
 		OrderBookVo vo= new OrderBookVo();
-		vo.setOrderNo(1);
-		vo.setBookNo(2);
-		vo.setAmount(12);
+		vo.setOrderNo(2);
+		vo.setBookNo(3);
+		vo.setAmount(20);
 		dao.insert(vo);
 	}
 	
 	public static void getList() {
 		OrderBookDao dao = new OrderBookDao();
-		System.out.println(dao.getList());
+		for(OrderBookVo orderBook : dao.getList()) {
+			System.out.println(orderBook);
+		}
 	}
 
 }
